@@ -14,5 +14,8 @@ jobs:
     - name: Checkout code into workspace directory
       uses: actions/checkout@v2
 
-    - name: List directory
-      run: ls -lRa
+    - name: Setup Vagrant
+      run: |
+        wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
+        sudo dpkg -i vagrant_2.2.14_x86_64.deb
+        docker build -f Dockerfile -t jojees/dockertest:0.1
