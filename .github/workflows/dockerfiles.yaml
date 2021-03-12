@@ -19,3 +19,10 @@ jobs:
         wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
         sudo dpkg -i vagrant_2.2.14_x86_64.deb
         docker build -f Dockerfile -t jojees/dockertest:0.1 .
+        vagrant up --no-provision --provider=docker
+
+    - name: Install Tox
+      run: pip install tox
+
+    - name: Run tox
+      run: tox
