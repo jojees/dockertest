@@ -7,11 +7,12 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  Setup:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Use jojees/dockertest
-      uses: ./
-      with:
-        entrypoint: entrypoint.sh
+
+    - name: Checkout code into workspace directory
+      uses: actions/checkout@v2
+
+    - name: List directory
+      run: ls -lRa
