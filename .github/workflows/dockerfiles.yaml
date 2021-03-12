@@ -14,5 +14,4 @@ jobs:
     - name: Use jojees/dockertest
       uses: ./
       with:
-        entrypoint: |
-          pwd && ls 
+        entrypoint: entrypoint.sh
